@@ -81,7 +81,8 @@
                 <option value="">Pilih Kota Asal</option>
                 <option value="Jakarta">Jakarta</option>
                 <option value="Surabaya">Surabaya</option>
-                <!-- Tambahkan opsi asal lainnya sesuai kebutuhan -->
+                <option value="Bandung">Bandung</option>
+                <option value="Bogor">Bogor</option>
               </select>
             </div>
 
@@ -91,7 +92,8 @@
                 <option value="">Pilih Kota Tujuan</option>
                 <option value="Bandung">Bandung</option>
                 <option value="Yogyakarta">Yogyakarta</option>
-                <!-- Tambahkan opsi tujuan lainnya sesuai kebutuhan -->
+                <option value="Surabaya">Surabaya</option>
+                <option value="Bogor">Bogor</option>
               </select>
             </div>
 
@@ -137,7 +139,10 @@
           "Jakarta-Yogyakarta": 150000,
           "Surabaya-Bandung": 120000,
           "Surabaya-Yogyakarta": 170000,
-          // Tambahkan harga tiket sesuai rute asal-tujuan
+          "Bandung-Bogor": 50000,
+          "Yogyakarta-Bogor": 100000,
+          "Jakarta-Surabaya": 200000,
+          "Bogor-Bandung": 50000,
         };
 
         var minimunTotalBayar = 0;
@@ -174,8 +179,9 @@
         }
 
         if (totalBayar < minimunTotalBayar) {
-          document.getElementById("pesan").textContent =
-            "Tidak memenuhi persyaratan.";
+          document.getElementById(
+            "pesan"
+          ).textContent = `Tidak memenuhi persyaratan. Min. Pembelian: ${minimunTotalBayar}`;
           document.getElementById("pesan").style.color = "red";
         } else {
           if (document.getElementById("member").checked) {
