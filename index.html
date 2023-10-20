@@ -176,6 +176,7 @@
         if (totalBayar < minimunTotalBayar) {
           document.getElementById("pesan").textContent =
             "Tidak memenuhi persyaratan.";
+          document.getElementById("pesan").style.color = "red";
         } else {
           if (document.getElementById("member").checked) {
             totalBayar *= 0.9; // Diskon 10% untuk member
@@ -190,8 +191,8 @@
             ).textContent = `Anda hemat ${diskon}%`;
             document.getElementById("pesan").style.color = "green";
           }
-          document.getElementById("totalBayar").value = totalBayar;
         }
+        document.getElementById("totalBayar").value = totalBayar;
       }
     </script>
   </body>
